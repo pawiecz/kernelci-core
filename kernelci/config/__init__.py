@@ -20,6 +20,10 @@ import os
 import yaml
 
 import kernelci.config
+import kernelci.config.build
+import kernelci.config.test
+import kernelci.config.lab
+import kernelci.config.rootfs
 
 
 def load_yaml(config_path, verbose=False):
