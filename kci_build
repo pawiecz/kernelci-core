@@ -428,7 +428,7 @@ class cmd_pull_tarball(Command):
 
 
 if __name__ == '__main__':
-    opts = parse_opts("kci_build", "config/core", globals())
+    opts = parse_opts("kci_build", globals())
     configs = kernelci.config.load(opts.yaml_config, opts.verbose)
     status = opts.command(configs, opts)
     sys.exit(0 if status is True else 1)

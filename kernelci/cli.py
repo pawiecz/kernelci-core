@@ -539,7 +539,7 @@ def make_options(args, prog):
     return opts
 
 
-def parse_opts(prog, default_config_path, glob):
+def parse_opts(prog, glob, default_config_path="config/core"):
     """Return an Options object with command line arguments and settings
 
     This will create a parser and automatically add the sub-commands from the
