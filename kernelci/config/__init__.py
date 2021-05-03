@@ -21,9 +21,10 @@ import yaml
 
 import kernelci.config
 import kernelci.config.build
-import kernelci.config.test
+import kernelci.config.data
 import kernelci.config.lab
 import kernelci.config.rootfs
+import kernelci.config.test
 
 
 def load_yaml(config_path, verbose=False):
@@ -48,9 +49,10 @@ def load_yaml(config_path, verbose=False):
 def load_config(data):
     config = dict()
     config.update(kernelci.config.build.from_yaml(data))
-    config.update(kernelci.config.test.from_yaml(data))
+    config.update(kernelci.config.data.from_yaml(data))
     config.update(kernelci.config.lab.from_yaml(data))
     config.update(kernelci.config.rootfs.from_yaml(data))
+    config.update(kernelci.config.test.from_yaml(data))
     return config
 
 
