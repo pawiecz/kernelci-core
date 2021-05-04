@@ -1703,7 +1703,6 @@ test_configs:
     test_plans:
       - baseline
       - ltp-crypto
-      - ltp-ipc
       - sleep
       - usb
 
@@ -1724,7 +1723,6 @@ test_configs:
     test_plans:
       - baseline
       - baseline-nfs
-      - ltp-crypto
       - ltp-ipc
 
   - device_type: cubietruck
@@ -1807,7 +1805,6 @@ test_configs:
       - baseline
       - baseline-nfs
       - cros-ec
-      - ltp-timers
       - sleep
 
   - device_type: hp-x360-12b-n4000-octopus
@@ -1941,7 +1938,6 @@ test_configs:
       - ltp-crypto
       - ltp-ipc
       - ltp-mm
-      - ltp-timers
 
   - device_type: kirkwood-db-88f6282
     test_plans:
@@ -2223,10 +2219,7 @@ test_configs:
     test_plans:
       - baseline
       - baseline-nfs
-      - ltp-crypto
-      - ltp-ipc
       - ltp-mm
-      - ltp-timers
       - sleep
       - usb
 
@@ -2238,9 +2231,6 @@ test_configs:
       - igt-gpu-panfrost
       - igt-kms-rockchip
       - kselftest-lib
-      - ltp-crypto
-      - ltp-ipc
-      - ltp-mm
       - ltp-timers
       - sleep
       - usb
@@ -2259,7 +2249,6 @@ test_configs:
       - ltp-ipc
       - ltp-mm
       - ltp-pty
-      - ltp-timers
       - sleep
       - v4l2-compliance-uvc
 
@@ -2332,7 +2321,6 @@ test_configs:
       - ltp-crypto
       - ltp-ipc
       - ltp-mm
-      - ltp-timers
 
   - device_type: sun50i-h6-pine-h64-model-b
     test_plans:
