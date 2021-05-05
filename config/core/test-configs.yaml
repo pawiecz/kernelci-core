@@ -2430,3 +2430,10 @@ test_configs:
   - device_type: zynq-zc702
     test_plans:
       - baseline
+
+
+build_configs:
+
+  zacky:
+    tree: kernelci
+    branch: 'hacky'
