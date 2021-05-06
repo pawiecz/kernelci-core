@@ -97,6 +97,17 @@ rootfs_configs:
     script: "scripts/buster-igt.sh"
     test_overlay: "overlays/igt"
 
+  buster-kselftest:
+    rootfs_type: debos
+    debian_release: buster
+    arch_list:
+      - amd64
+      - arm64
+      - armhf
+    extra_packages:
+      - jdim
+      - libhugetlbfs0
+
   buster-ltp:
     rootfs_type: debos
     debian_release: buster
