@@ -17,7 +17,7 @@
 
 import yaml
 
-from kernelci.config import FilterFactory, YAMLObject
+from kernelci.config.base import FilterFactory, YAMLObject
 
 
 class Tree(YAMLObject):
@@ -392,10 +392,7 @@ class BuildConfig(YAMLObject):
         return self._reference
 
 
-def from_yaml(yaml_path):
-    with open(yaml_path) as f:
-        data = yaml.safe_load(f)
-
+def from_yaml(data):
     trees = {
         name: Tree.from_yaml(config, name)
         for name, config in data['trees'].items()
