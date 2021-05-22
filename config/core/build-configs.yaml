@@ -100,6 +100,9 @@ trees:
   qcom-lt:
     url: "https://git.linaro.org/landing-teams/working/qualcomm/kernel.git"
 
+  rppt:
+    url: "https://git.kernel.org/pub/scm/linux/kernel/git/rppt/memblock.git/"
+
   renesas:
     url: "https://git.kernel.org/pub/scm/linux/kernel/git/geert/renesas-devel.git"
 
@@ -391,10 +394,21 @@ arch_defconfigs: &arch_defconfigs
       - regex: { defconfig: 'x86_64_defconfig' }
 
 
+# Small subset of builds, only defconfigs
 minimal_variants: &minimal_variants
   gcc-8: &gcc_8_minimal
     build_environment: gcc-8
     architectures: *arch_defconfigs
+
+# Medium subset of builds
+medium_variants: &medium_variants
+  gcc-8:
+    build_environment: gcc-8
+    architectures:
+      x86_64: *x86_64_arch
+      i386: *i386_arch
+      arm64: *arm64_arch
+      arm: *arm_arch
 
 
 # Build fewer kernel configs with stable branches
@@ -780,14 +794,7 @@ build_configs:
   lee_android_3.18:
     tree: lee
     branch: 'android-3.18-preview'
-    variants:
-      gcc-8:
-        build_environment: gcc-8
-        architectures:
-          x86_64: *x86_64_arch
-          i386: *i386_arch
-          arm64: *arm64_arch
-          arm: *arm_arch
+    variants: *medium_variants
 
   linusw_devel:
     tree: linusw
@@ -900,6 +907,11 @@ build_configs:
   pmwg:
     tree: pmwg
     branch: 'integ'
+
+  rppt:
+    tree: rppt
+    branch: 'for-kernelci'
+    variants: *medium_variants
 
   qcom-lt:
     tree: qcom-lt
