@@ -135,12 +135,14 @@ class API(abc.ABC):
 
     def _get(self, path, params=None):
         url = self._make_url(path)
+        print(f"init: get: {url}")
         resp = requests.get(url, params, headers=self._headers)
         resp.raise_for_status()
         return resp
 
     def _post(self, path, data=None, params=None):
         url = self._make_url(path)
+        print(f"init: post: {url}")
         jdata = json.dumps(data)
         resp = requests.post(url, jdata, headers=self._headers, params=params)
         resp.raise_for_status()
@@ -148,6 +150,7 @@ class API(abc.ABC):
 
     def _put(self, path, data=None, params=None):
         url = self._make_url(path)
+        print(f"init: put: {url}")
         jdata = json.dumps(data)
         resp = requests.put(url, jdata, headers=self._headers, params=params)
         resp.raise_for_status()

@@ -41,6 +41,7 @@ class APIHelper:
 
     def receive_event_data(self, sub_id):
         """Receive CloudEvent from Pub/Sub and return its data payload"""
+        print(f"helper: receive_event_data: {sub_id}")
         return self.api.receive_event(sub_id).data
 
     def get_node_from_event(self, event_data):

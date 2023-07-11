@@ -80,6 +80,7 @@ class LatestAPI(API):
     def receive_event(self, sub_id: int):
         path = '/'.join(['listen', str(sub_id)])
         while True:
+            print(f"latest: receive_event: {path}")
             resp = self._get(path)
             data = resp.json().get('data')
             if not data:
