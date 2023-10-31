@@ -1,0 +1,21 @@
+- deploy:
+    images:
+      kernel:
+        url: {{ node.artifacts.bzImage }}
+        image_arg: -kernel {kernel} -serial stdio --append "console=ttyS0"
+        type: zimage
+      ramdisk:
+        url: https://images.collabora.co.uk/singularity/health-check/qemu/ramdisk-5/rootfs.cpio.gz
+        image_arg: -initrd {ramdisk}
+        compression: gz
+    os: oe
+    root_partition: 1
+    to: tftp
+
+- boot:
+    method: grub
+    commands: ramdisk
+    prompts: ['# ']
+    auto_login:
+        login_prompt: 'buildroot login:'
+        username: root
