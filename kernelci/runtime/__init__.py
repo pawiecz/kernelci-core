@@ -125,7 +125,7 @@ class Runtime(abc.ABC):
         params = {
             'api_config': api_config or {},
             'storage_config': job.storage_config or {},
-            'platform_config': job.platform_config or {},
+            'platform_config': job.platform_config.to_dict() or {},
             'name': job.name,
             'node': job.node,
             'runtime': self.config.lab_type,
