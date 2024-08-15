@@ -103,7 +103,7 @@ rootfs_configs:
     script: "scripts/bookworm-gst-fluster.sh"
     test_overlay: "overlays/fluster"
     imagesize: 4GB
-    debos_memory: 8G
+    debos_memory: 15G
 
   bookworm-igt:
     rootfs_type: debos
