@@ -104,6 +104,7 @@ rootfs_configs:
     test_overlay: "overlays/fluster"
     imagesize: 4GB
     debos_memory: 15G
+    debos_scratchsize: 32G
 
   bookworm-igt:
     rootfs_type: debos
