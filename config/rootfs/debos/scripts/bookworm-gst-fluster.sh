@@ -68,7 +68,7 @@ git config --global user.name "KernelCI Bot"
 GSTREAMER_URL=https://gitlab.freedesktop.org/gstreamer/gstreamer.git
 mkdir -p /var/tests/gstreamer && cd /var/tests/gstreamer
 
-git clone --depth 1 --branch "1.24.7" $GSTREAMER_URL .
+git clone --depth 1 --branch "1.22.11" $GSTREAMER_URL .
 
 meson setup build \
 	--wrap-mode=nofallback \
